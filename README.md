@@ -23,3 +23,7 @@ This webapp will have two core functionalities.
 
 Users will start at the homepage and use the homepage tiles to navigate to all other parts of the website. They can use the search bar at the top of the homepage or click the tile to access areas like pamphlets, static information pages, and map result pages.
 If the user wants to access the filter options for the search function, they click the arrow to get a dropdown with filter options.
+
+## Wiki
+
+For more detailed information and resources related to the project, [check out the wiki pages](https://github.com/UW-INFO442-AU21/group2-stallions/wiki)
