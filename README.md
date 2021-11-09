@@ -5,6 +5,7 @@ Group 2, the Stallions
 Colin Kwiecinski, Ginsu Eddy, Beneyam Mesele, Talin Hans, Kellen Maier
 
 ## Objective
+
 Our objective is to address UN SDG 17, partnerships, by developing a webapp that will serve as a resource hub for
 any Seattle residents who wish to provide aid to homelessness in Seattle.
 
@@ -12,6 +13,7 @@ Our first step towards achieving this will be to build a MVP for our product, a 
 This webapp will have two core functionalities.
 
 ## Features
+
 - Landing page
 - Search box with filters
 - Static resource pages
