@@ -19,6 +19,10 @@ This webapp will have two core functionalities.
 - Static resource pages
 - Pamphlet Generator
 
+## Wireframe
+
+[Wireframe link](https://whimsical.com/initial-wireframe-3Rsk9azTDFvgKtS1ng6DxP)
+
 ## User Flow
 
 Users will start at the homepage and use the homepage tiles to navigate to all other parts of the website. They can use the search bar at the top of the homepage or click the tile to access areas like pamphlets, static information pages, and map result pages.
