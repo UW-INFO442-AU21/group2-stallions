@@ -6,16 +6,16 @@ import {
     Drawer,
     Link,
     Grid,
-    Typography,
+    MenuItem
 } from "@mui/material";
 import { makeStyles } from '@mui/styles';
 import MenuIcon from "@mui/icons-material/Menu";
-import React, { useState } from "react";
-import { Link as RouterLink } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 const headersData = [
     {
-        label: "Home",
+        label: "Seattle Support",
         href: "/",
     },
     {
@@ -40,9 +40,8 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     menuButton: {
-        fontFamily: "Poppins, sans-serif",
         color: "#505279",
-        fontSize: "18px",
+        fontSize: "12px",
         marginLeft: "38px",
     },
     toolbar: {
@@ -50,88 +49,121 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: "space-between",
     },
     drawerContainer: {
-        padding: "20px 40px",
+        padding: "20px 30px",
     },
 }));
 
-const NavBar = () => {
+export default function NavBar() {
     const classes = useStyles();
-    const [drawerOpen, setDrawerOpen] = useState(false);
+  
+    const [state, setState] = useState({
+      mobileView: false,
+      drawerOpen: false,
+    });
+  
+    const { mobileView, drawerOpen } = state;
 
-    const drawer = () => {
-        const handleDrawerOpen = () => setDrawerOpen(true);
-        const handleDrawerClose = () => setDrawerOpen(false);
-        return (
-            <Toolbar>
-                <IconButton
-                    {...{
-                        edge: "start",
-                        color: "inherit",
-                        "aria-label": "menu",
-                        "aria-haspopup": "true",
-                        onClick: handleDrawerOpen,
-                    }}
-                >
-                    <MenuIcon />
-                </IconButton>
-
-                <Drawer
-                    {...{
-                        anchor: "left",
-                        open: drawerOpen,
-                        onClose: handleDrawerClose,
-                    }}
-                >
-                    <div className={classes.drawerContainer}>{<NavbarContent />}</div>
-                </Drawer>
-            </Toolbar>
-        );
+    const location = useLocation();
+  
+    useEffect(() => {
+      const setResponsiveness = () => {
+        return window.innerWidth < 900
+          ? setState((prevState) => ({ ...prevState, mobileView: true }))
+          : setState((prevState) => ({ ...prevState, mobileView: false }));
+      };
+  
+      setResponsiveness();
+  
+      window.addEventListener("resize", () => setResponsiveness());
+    }, []);
+  
+    const displayDesktop = () => {
+      return (
+        <Toolbar className={classes.toolbar}>
+          <Grid container justifyContent='flex-start'>{getMenuButtons()}</Grid>
+        </Toolbar>
+      );
     };
-
-    const NavItems = () => {
-        return headersData.map(({ label, href }) => {
-            return (
-                <Grid item>
-                    <Link
-                        {...{
-                            component: RouterLink,
-                            to: href,
-                            color: "inherit",
-                            style: { textDecoration: "none" },
-                            key: label,
-                        }}
-                    >
-                        <Button variant='text'>
-                            <Typography>{label}</Typography>
-                        </Button>
-                    </Link>
-                </Grid>
-            );
-        });
-    };
-
-    const NavbarContent = () => {
-        return (
-            <Grid container direction='column' alignItems='center' justifyContent='space-between'>
-                <Grid item>
-                    <Grid container spacing={4} justifyContent='center' alignItems='center' direction='column'>
-                        <Grid item>
-                            <Typography>Seattle Support</Typography>
-                        </Grid>
-                        <NavItems />
-                    </Grid>
-                </Grid>
+  
+    const displayMobile = () => {
+      const handleDrawerOpen = () =>
+        setState((prevState) => ({ ...prevState, drawerOpen: true }));
+      const handleDrawerClose = () =>
+        setState((prevState) => ({ ...prevState, drawerOpen: false }));
+  
+      return (
+        <Toolbar>
+          <Grid container justifyContent='flex-start'>
+            <Grid item>
+              <IconButton
+                {...{
+                  color: "inherit",
+                  "aria-label": "menu",
+                  "aria-haspopup": "true",
+                  onClick: handleDrawerOpen,
+                }}
+              >
+                <MenuIcon />
+              </IconButton>
             </Grid>
-        );
+          </Grid>
+          <Drawer
+            {...{
+              anchor: "left",
+              open: drawerOpen,
+              onClose: handleDrawerClose,
+            }}
+          >
+            <div className={classes.drawerContainer}>{getDrawerChoices()}</div>
+          </Drawer>
+        </Toolbar>
+      );
     };
-
+  
+    const getDrawerChoices = () => {
+      return headersData.map(({ label, href }) => {
+        return (
+          <Link
+            {...{
+              component: RouterLink,
+              to: href,
+              color: "inherit",
+              style: { textDecoration: "none" },
+              key: label,
+            }}
+          >
+            <MenuItem>{label}</MenuItem>
+          </Link>
+        );
+      });
+    };
+  
+  
+    const getMenuButtons = () => {
+      return headersData.map(({ label, href }) => {
+          const isActive = href === location.pathname;
+        return (
+          <Button
+            {...{
+              key: label,
+              color: "inherit",
+              to: href,
+              component: RouterLink,
+              className: classes.menuButton,
+            }}
+            variant={isActive ?  'outlined' : 'line'}
+          >
+            {label}
+          </Button>
+        );
+      });
+    };
+  
     return (
-        <div className={classes.root}>
-            <AppBar className={classes.header}>
-                {drawer()}
-            </AppBar>
-        </div>
+      <div className={classes.root}>
+        <AppBar className={classes.header}>
+          {mobileView ? displayMobile() : displayDesktop()}
+        </AppBar>
+      </div>
     );
-};
-
-export default NavBar;
+  }
