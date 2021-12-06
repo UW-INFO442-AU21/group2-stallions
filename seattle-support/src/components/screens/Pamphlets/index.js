@@ -9,6 +9,7 @@ import Topbar from './topbar';
 import withLayout from "../../app/navigation/withLayout";
 import { TemplatesSection } from './template';
 import { ElementsSection, TextSection, BackgroundSection, UploadSection, SizeSection} from 'polotno/side-panel';
+import { borderColor } from '@mui/system';
 
 const useHeight = () => {
     const [height, setHeight] = React.useState(window.innerHeight);
@@ -38,10 +39,10 @@ const Pamphlets = ({ store }) => {
     return (
         <div
             style={{
-                width: '90vw',
+                width: '100%',
                 height: height + 'px',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'column'
             }}
             onDrop={handleDrop}>
 
