@@ -12,7 +12,7 @@ import { makeStyles } from '@mui/styles';
 import MenuIcon from "@mui/icons-material/Menu";
 import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
-  
+
 const headersData = [
     {
         label: "Home",
@@ -22,8 +22,12 @@ const headersData = [
         label: "Pamphlets",
         href: "/pamphlets",
     },
+    {
+        label: "Information Resource",
+        href: "/informationResource",
+    },
 ];
-  
+
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
@@ -49,11 +53,11 @@ const useStyles = makeStyles((theme) => ({
         padding: "20px 40px",
     },
 }));
-  
+
 const NavBar = () => {
     const classes = useStyles();
     const [drawerOpen, setDrawerOpen] = useState(false);
-  
+
     const drawer = () => {
         const handleDrawerOpen = () => setDrawerOpen(true);
         const handleDrawerClose = () => setDrawerOpen(false);
@@ -70,7 +74,7 @@ const NavBar = () => {
                 >
                     <MenuIcon />
                 </IconButton>
-  
+
                 <Drawer
                     {...{
                         anchor: "left",
@@ -83,7 +87,7 @@ const NavBar = () => {
             </Toolbar>
         );
     };
-  
+
     const NavItems = () => {
         return headersData.map(({ label, href }) => {
             return (
@@ -105,7 +109,7 @@ const NavBar = () => {
             );
         });
     };
-  
+
     const NavbarContent = () => {
         return (
             <Grid container direction='column' alignItems='center' justifyContent='space-between'>
@@ -120,7 +124,7 @@ const NavBar = () => {
             </Grid>
         );
     };
-  
+
     return (
         <div className={classes.root}>
             <AppBar className={classes.header}>
@@ -131,4 +135,3 @@ const NavBar = () => {
 };
 
 export default NavBar;
-  
