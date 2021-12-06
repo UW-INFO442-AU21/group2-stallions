@@ -1,5 +1,6 @@
 import React from "react";
 import figure1 from '../../../images/figure1.png';
+import withLayout from "../../app/navigation/withLayout";
 
 const InformationResource = ({ title, subtitle, paragraphs }) => {
 
@@ -25,4 +26,4 @@ const InformationResource = ({ title, subtitle, paragraphs }) => {
     );
 };
 
-export default InformationResource;
+export default withLayout(InformationResource);
