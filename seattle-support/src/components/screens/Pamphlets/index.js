@@ -46,8 +46,11 @@ const Pamphlets = ({ store }) => {
             onDrop={handleDrop}>
 
             <h1> Pamphlet Generator</h1>
-            <p>Use this pamhplet generator to create custom informational flyers that can be distributed to people in need who may
+            <p>Use this pamphlet generator to create custom informational flyers that can be distributed to people in need who may
                 lack access to technology </p>
+            <p> You can create your own pamphlet from scratch, or feel free to use one of our templates.
+                If you need to save your work to revisit it later, use the save feature to export the template.
+                To create a printable version of the pamphlet, use the download button. </p>
 
             <Topbar store={store} />
             <div style={{ height: 'calc(90% - 50px)' }}>

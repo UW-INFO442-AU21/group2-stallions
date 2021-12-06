@@ -1,3 +1,7 @@
+/**
+ * Loads in a user supplied json template of a canvas workspace
+ */
+
 export const loadJSONFile = (file, store) => {
   var reader = new FileReader();
   reader.onloadend = function () {
