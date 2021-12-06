@@ -6,6 +6,14 @@
         "preview": "pam1.png"
       },
       {
+        "json": "restarea1.json",
+        "preview": "restarea1.png"
+      },
+      {
+        "json": "foodbank1.json",
+        "preview": "foodbank1.png"
+      },
+      {
         "json": "demo.json",
         "preview": "demo.png"
       }
