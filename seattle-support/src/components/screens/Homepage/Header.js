@@ -12,7 +12,7 @@ function Header(props) {
       <Toolbar sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Typography
           component="h2"
-          variant="h5"
+          variant="h2"
           color="inherit"
           align="center"
           noWrap

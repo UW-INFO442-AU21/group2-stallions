@@ -32,7 +32,7 @@ const InformationResource = () => {
     <ThemeProvider theme={theme}>
       <CssBaseline />
       <Container maxWidth="lg">
-        <Header title="Informational Resources" sections={sections} />
+        <Header title="Seattle Support" sections={sections} />
         <main>
           <MainFeaturedPost post={mainFeaturedPost} />
           {/* <Grid container spacing={4}>
