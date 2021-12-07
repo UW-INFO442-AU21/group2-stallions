@@ -4,6 +4,8 @@ Group 2, the Stallions
 
 Colin Kwiecinski, Ginsu Eddy, Beneyam Mesele, Talin Hans, Kellen Maier
 
+[Link to Site](https://group2-stallions.vercel.app)
+
 ## Objective
 
 Our objective is to address UN SDG 17, partnerships, by developing a webapp that will serve as a resource hub for
@@ -15,12 +17,12 @@ This webapp will have two core functionalities.
 ## Features
 
 - Landing page
-- Search box with filters
-- Static resource pages
-- Pamphlet Generator
+- Static resource and information pages
+- Pamphlet generator and templates
 
 ## Wireframe
 
+![Initial Wireframe](https://github.com/UW-INFO442-AU21/group2-stallions/blob/master/img/initial%20wireframe.png)
 [Wireframe link](https://whimsical.com/initial-wireframe-3Rsk9azTDFvgKtS1ng6DxP)
 
 ## User Flow
