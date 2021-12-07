@@ -1,0 +1,30 @@
+{
+    "resources": [{
+        "title": "National Alliance To End Homelessness",
+        "url": "https://endhomelessness.org/homelessness-in-america/homelessness-statistics/state-of-homelessness-2021/",
+        "imgPath": "https://is1-ssl.mzstatic.com/image/thumb/Purple113/v4/7b/3f/f1/7b3ff13b-9c4c-5444-78a4-8bbfc25c0f33/source/512x512bb.jpg",
+        "imgAlt": "Image of National Alliance To End Homelessness logo.",
+        "resourceDesc": "Resource 1 description"
+    },
+    {
+        "title": "United States Interagency Council on Homelessness",
+        "url": "https://www.usich.gov/solutions/",
+        "imgPath": "https://www.realchangenews.org/sites/default/files/styles/article_image_full/public/Homeless%20camp%20file%20_7104%20smaller.jpg?itok=lEtONH1e",
+        "imgAlt": "Image of a homeless encampment outside next to the freeway.",
+        "resourceDesc": "resource 2 description"
+    },
+    {
+        "title": "Seattle Homeless Outreach",
+        "url": "https://seattlehomeless.org/",
+        "imgPath": "https://seattlehomeless.org/wp-content/uploads/2018/03/sho_logo.png",
+        "imgAlt": "Image of Seattle Homeless Outreach logo.",
+        "resourceDesc": "resource 3 description"
+    },
+    {
+        "title": "National Health Care for the Homeless Council",
+        "url": "https://nhchc.org/understanding-homelessness/homelessness-resources/",
+        "imgPath": "https://pbs.twimg.com/media/FEVTE0zXoAM1EEF?format=jpg&name=large",
+        "imgAlt": "Image of a man with his arms crossed. Image says 'Still meeting the challenge' and has the National Health Care for the Homeless Council logo.",
+        "resourceDesc": "resource 4 description"
+    }]
+}
