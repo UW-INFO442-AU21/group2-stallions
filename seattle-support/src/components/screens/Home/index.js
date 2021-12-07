@@ -9,7 +9,7 @@ let resourceItems = RESOURCES.resources
 
 const Home = () => {
     return (
-        <div>
+        <div className="pageContainer">
             <div>
                 <h1>Seattle Support</h1>
                 <p>Join us in helping to combat homelessness. Use this as a resource to create
