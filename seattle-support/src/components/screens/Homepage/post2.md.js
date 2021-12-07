@@ -1,7 +1,7 @@
 export default `
 # What can college students do to help?
 
-#### Colin Dec 3, 2021
+#### Dec 3, 2021 by Beneyam
 
 Our group has taken the opportunity to study this issue and identify a few of the underlying causes towards homlessness. We don’t believe there’s just a simple solution for it, but there are ways to mitigate this cause in the near future. According to the Dept of Housing and Urban Development, homelessness in Seattle has been rising over the past decade and there are still about  4,000 individuals who are considered unsheltered and homeless.
 

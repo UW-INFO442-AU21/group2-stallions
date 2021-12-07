@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import localforage from 'localforage';
-import Home from '../screens/Home';
+import Home from '../screens/InformationResource';
 import { createStore } from 'polotno/model/store';
 import Pamphlets from '../screens/Pamphlets';
-import InformationResource from '../screens/InformationResource';
+import InformationResource from '../screens/Homepage';
 
 const store = createStore({ key: '1dhazL_sUsyRbsXfvCai' });
 window.store = store;
@@ -37,12 +37,12 @@ const App = () => {
     return (
         <Router>
             <Routes>
-                <Route exact path='/' element={<Home/>} />
+                <Route exact path='/' element={<InformationResource/>} />
                 <Route path='/pamphlets' element={<Pamphlets store={store} />} />
                 <Route
                     path='/informationResource'
                     element={
-                        <InformationResource
+                        <Home
                             title="This is the Title Prop"
                             subtitle="this is the subtitle"
                             paragraphs={paragraphs}

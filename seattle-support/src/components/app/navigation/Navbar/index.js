@@ -23,7 +23,7 @@ const headersData = [
         href: "/pamphlets",
     },
     {
-        label: "Information Resource",
+        label: "Resources",
         href: "/InformationResource",
     },
 ];

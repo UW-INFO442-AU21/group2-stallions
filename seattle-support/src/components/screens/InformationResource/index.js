@@ -1,52 +1,60 @@
-// Credit to MUI for the basis of this template
-import CssBaseline from '@mui/material/CssBaseline';
-import Grid from '@mui/material/Grid';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Header from './Header';
-import MainFeaturedPost from './MainFeaturedPost';
-import Main from './Main';
+import React from "react";
+import withLayout from "../../app/navigation/withLayout";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card, Row, Col} from 'react-bootstrap'
+import RESOURCES from "./resources.json"
+import "./styles.css"
 
-import post1 from './post1.md.js';
-import post2 from './post2.md.js';
+let resourceItems = RESOURCES.resources
 
-import withLayout from '../../app/navigation/withLayout';
-
-const sections = [];
-
-const mainFeaturedPost = {
-  title: 'Gain a better understanding of Seattle\'s homeless crisis and how to help',
-  description:
-    "By providing our users with different perspectives and reports from around the city, we hope to increase awareness and education about the homelessness crisis that Seattle is facing. ",
-  image: 'https://komonews.com/resources/media2/16x9/full/1015/center/80/45ebe8f2-20f5-424b-a35c-b0e062c787b6-large16x9_E7_vvmSVgAQ6plL.jpg',
-  imageText: 'Space neddle with homeless camps in the foreground',
-  linkText: '',
+const Home = () => {
+    return (
+        <div className="pageContainer">
+            <div>
+                <h1>Related External Resources</h1>
+                <p>We can't solve this crisis alone, and there are many government organizations and charities doing great work too! They have a lot of great information on other ways you can join the fight against homelessness in Seattle.</p>
+                <p>Below are some great starting resources, go check them out!</p>
+            </div>
+            <Row xs={1} md={2} lg={4}>
+                <Col className="d-flex p-2">
+                    <Card className="myCard" onClick= { () => {window.open(resourceItems[0].url)}}>
+                        <img src={resourceItems[0].imgPath} alt={resourceItems[0].imgAlt}/>
+                        <Card.Body>
+                            <Card.Title className="d-flex justify-content-center">{resourceItems[0].title}</Card.Title>
+                            <Card.Text className="d-flex justify-content-center">{resourceItems[0].resourceDesc}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col className="d-flex p-2">
+                    <Card className="myCard" onClick= { () => {window.open(resourceItems[1].url)}}>
+                        <img src={resourceItems[1].imgPath} alt={resourceItems[1].imgAlt}/>
+                        <Card.Body>
+                            <Card.Title>{resourceItems[1].title}</Card.Title>
+                            <Card.Text>{resourceItems[1].resourceDesc}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col className="d-flex p-2">
+                    <Card className="myCard" onClick= { () => {window.open(resourceItems[2].url)}}>
+                        <img src={resourceItems[2].imgPath} alt={resourceItems[2].imgAlt}/>
+                        <Card.Body>
+                            <Card.Title>{resourceItems[2].title}</Card.Title>
+                            <Card.Text>{resourceItems[2].resourceDesc}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+                <Col className="d-flex p-2">
+                    <Card className="myCard" onClick= { () => {window.open(resourceItems[3].url)}}>
+                        <img src={resourceItems[3].imgPath} alt={resourceItems[3].imgAlt}/>
+                        <Card.Body>
+                            <Card.Title>{resourceItems[3].title}</Card.Title>
+                            <Card.Text>{resourceItems[3].resourceDesc}</Card.Text>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
+        </div>
+    );
 };
 
-const posts = [post1, post2];
-
-const theme = createTheme();
-
-const InformationResource = () => {
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container maxWidth="lg">
-        <Header title="Informational Resources" sections={sections} />
-        <main>
-          <MainFeaturedPost post={mainFeaturedPost} />
-          {/* <Grid container spacing={4}>
-            {featuredPosts.map((post) => (
-              <FeaturedPost key={post.title} post={post} />
-            ))}
-          </Grid> */}
-          <Grid container spacing={5} sx={{ mt: 3 }}>
-            <Main title="Latest Resources and Information" posts={posts} />
-          </Grid>
-        </main>
-      </Container>
-    </ThemeProvider>
-  );
-}
-
-export default withLayout(InformationResource)
+export default withLayout(Home);
