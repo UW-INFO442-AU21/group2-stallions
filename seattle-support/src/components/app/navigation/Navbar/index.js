@@ -24,7 +24,7 @@ const headersData = [
     },
     {
         label: "Information Resource",
-        href: "/informationResource",
+        href: "/InformationResource",
     },
 ];
 
@@ -55,28 +55,28 @@ const useStyles = makeStyles((theme) => ({
 
 export default function NavBar() {
     const classes = useStyles();
-  
+
     const [state, setState] = useState({
       mobileView: false,
       drawerOpen: false,
     });
-  
+
     const { mobileView, drawerOpen } = state;
 
     const location = useLocation();
-  
+
     useEffect(() => {
       const setResponsiveness = () => {
         return window.innerWidth < 900
           ? setState((prevState) => ({ ...prevState, mobileView: true }))
           : setState((prevState) => ({ ...prevState, mobileView: false }));
       };
-  
+
       setResponsiveness();
-  
+
       window.addEventListener("resize", () => setResponsiveness());
     }, []);
-  
+
     const displayDesktop = () => {
       return (
         <Toolbar className={classes.toolbar}>
@@ -84,13 +84,13 @@ export default function NavBar() {
         </Toolbar>
       );
     };
-  
+
     const displayMobile = () => {
       const handleDrawerOpen = () =>
         setState((prevState) => ({ ...prevState, drawerOpen: true }));
       const handleDrawerClose = () =>
         setState((prevState) => ({ ...prevState, drawerOpen: false }));
-  
+
       return (
         <Toolbar>
           <Grid container justifyContent='flex-start'>
@@ -119,7 +119,7 @@ export default function NavBar() {
         </Toolbar>
       );
     };
-  
+
     const getDrawerChoices = () => {
       return headersData.map(({ label, href }) => {
         return (
@@ -137,8 +137,8 @@ export default function NavBar() {
         );
       });
     };
-  
-  
+
+
     const getMenuButtons = () => {
       return headersData.map(({ label, href }) => {
           const isActive = href === location.pathname;
@@ -158,7 +158,7 @@ export default function NavBar() {
         );
       });
     };
-  
+
     return (
       <div className={classes.root}>
         <AppBar className={classes.header}>
