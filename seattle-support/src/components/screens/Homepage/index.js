@@ -3,6 +3,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import Grid from '@mui/material/Grid';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import ReactPlayer from 'react-player';
 import Header from './Header';
 import MainFeaturedPost from './MainFeaturedPost';
 import Main from './Main';
@@ -42,6 +43,11 @@ const InformationResource = () => {
           </Grid> */}
           <Grid container spacing={5} sx={{ mt: 3 }}>
             <Main title="Latest Resources and Information" posts={posts} />
+            <div style={{ flex: 1, display: 'flex', justifyContent: 'center', marginBottom: 40 }}>
+              <ReactPlayer
+                url="https://www.youtube.com/watch?v=t5rDw4kShDM"
+              />
+            </div>
           </Grid>
         </main>
       </Container>
